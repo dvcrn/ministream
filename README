@@ -1,0 +1,44 @@
+Very basic implementation of the FrontpageController Pattern in PHP.
+
+Define a Controller:
+Add all your Controllers in the controller/ dir. Name Guideline is <controllername>Controller.php
+
+Example: controller/testController.php 
+
+Example of a Controller:
+
+<?php
+class testController
+{
+  public function init($request)
+  {
+      echo "I'm the Init";
+  }
+
+  public function hiAction()
+  {
+    echo "I'm the hiAction";
+  }
+
+}
+
+Right after the Controller is initialized, the init() Function will be called. As Parameter, it gets the whole http Request, splitted by POST and GET.
+
+$request['post'] = // All the POST Stuff will go here
+$request['get'] = // All the GET Stuff will go here
+
+
+Actions are Named exactly like in Zend:
+<actionName>Action(). In my Example: hiAction().
+
+
+To call your Controller with the Browser, navigate to your index.php and add the 'controller' and 'action' Parameter.
+
+Example:
+index.php?controller=test&action=hi
+
+(Add a mod_rewrite for your specification :))
+
+
+
+The 404.html will be called, when no Controller, a not-existing Controller or no Action is given. 
