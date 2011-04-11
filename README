@@ -31,6 +31,7 @@ $request['get'] = // All the GET Stuff will go here
 Actions are Named exactly like in Zend:
 <actionName>Action(). In my Example: hiAction().
 
+If no Action is set, the indexAction will be called
 
 To call your Controller with the Browser, navigate to your index.php and add the 'controller' and 'action' Parameter.
 
