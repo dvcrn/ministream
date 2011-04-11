@@ -23,7 +23,7 @@ class FrontpageController
   {
       $controllerfile = 'controller/' . $this->_controller . '.php';
       
-      if ( is_file($controllerfile) AND (!is_null($this->_action)) )
+      if ( is_file($controllerfile) )
           require_once $controllerfile;
       else
           $this->_call404();
@@ -34,7 +34,10 @@ class FrontpageController
       try 
       {
           $action = $this->_action;
-          $controller->$action();
+          if ( $action )
+            $controller->$action();
+          else
+            $controller->indexAction();
       }
       catch(Exception $e)
       {
