@@ -9,7 +9,7 @@ class FrontpageController
   {
       $this->_request['get'] = $_GET;
       $this->_request['post'] = $_POST;
-      $this->_controller = isset($_GET['controller']) ? $_GET['controller'] . 'Controller' : null;
+      $this->_controller = isset($_GET['controller']) ? $_GET['controller'] . 'Controller' : 'IndexController';
       $this->_action = isset($_GET['action']) ? $_GET['action'] . 'Action' : null;
   }
 

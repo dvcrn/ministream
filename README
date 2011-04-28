@@ -1,5 +1,11 @@
 Very basic implementation of the FrontpageController Pattern in PHP.
 
+Take a look at the indexController! It's a nice example how to use it!
+
+
+--------------------------------------------------------------------------------------------
+
+
 Define a Controller:
 Add all your Controllers in the controller/ dir. Name Guideline is <controllername>Controller.php
 
@@ -32,6 +38,7 @@ Actions are Named exactly like in Zend:
 <actionName>Action(). In my Example: hiAction().
 
 If no Action is set, the indexAction will be called
+If no Controller is set, the indexController will be called
 
 To call your Controller with the Browser, navigate to your index.php and add the 'controller' and 'action' Parameter.
 
@@ -42,4 +49,4 @@ index.php?controller=test&action=hi
 
 
 
-The 404.html will be called, when no Controller, a not-existing Controller or no Action is given. 
+The 404.html will be called, when a not-existing Controller is called 
