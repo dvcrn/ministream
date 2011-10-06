@@ -18,6 +18,7 @@ That's it. You are using it now!
 Controller are build exactly as in Zend. Put your file into the controller/ dir and name it &lt;myName&gt;Controller.php. This part is important.
 
 Controller sceleton:
+
 	<?php
 
 	class IndexController extends Controller {
