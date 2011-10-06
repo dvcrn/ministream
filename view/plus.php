@@ -1,0 +1,1 @@
+<p><?php echo $_TP['text']; ?></p>

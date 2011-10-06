@@ -1,16 +1,27 @@
 <?php
-class FrontpageController
+require_once 'classes/Settings.php';
+require_once 'classes/Request.php';
+
+class Ministream
 {
   private $_request;
   private $_action;
   private $_controller;
+  private $_settings;
 
   function __construct()
   {
-      $this->_request['get'] = $_GET;
-      $this->_request['post'] = $_POST;
-      $this->_controller = isset($_GET['controller']) ? $_GET['controller'] . 'Controller' : 'IndexController';
-      $this->_action = isset($_GET['action']) ? $_GET['action'] . 'Action' : null;
+      $get = $this->_request['get'] = $_GET;
+      $post = $this->_request['post'] = $_POST;
+      $this->_request = new Request($get, $post);
+
+      $this->_settings = new Settings();
+
+      $cp = $this->_settings->get('controller_prefix');
+      $ap = $this->_settings->get('action_prefix');
+
+      $this->_controller = isset($_GET[$cp]) ? $_GET[$cp] . 'Controller' : 'IndexController';
+      $this->_action = isset($_GET[$ap]) ? $_GET[$ap] . 'Action' : null;
   }
 
   public static function _call404()
